@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D74BEE5A29C3769800D96630 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74BEE5929C3769800D96630 /* OnboardView.swift */; };
+		D74BEE5C29C376CC00D96630 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74BEE5B29C376CC00D96630 /* GameView.swift */; };
 		D7F3961A29C34A7600D8B30D /* RPS_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3961929C34A7600D8B30D /* RPS_GameApp.swift */; };
 		D7F3961C29C34A7600D8B30D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3961B29C34A7600D8B30D /* ContentView.swift */; };
 		D7F3961E29C34A7800D8B30D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7F3961D29C34A7800D8B30D /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D74BEE5929C3769800D96630 /* OnboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		D74BEE5B29C376CC00D96630 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		D7F3961629C34A7600D8B30D /* RPS Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RPS Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7F3961929C34A7600D8B30D /* RPS_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPS_GameApp.swift; sourceTree = "<group>"; };
 		D7F3961B29C34A7600D8B30D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 		D7F3961829C34A7600D8B30D /* RPS Game */ = {
 			isa = PBXGroup;
 			children = (
+				D74BEE5B29C376CC00D96630 /* GameView.swift */,
+				D74BEE5929C3769800D96630 /* OnboardView.swift */,
 				D7F3961929C34A7600D8B30D /* RPS_GameApp.swift */,
 				D7F3961B29C34A7600D8B30D /* ContentView.swift */,
 				D7F3961D29C34A7800D8B30D /* Assets.xcassets */,
@@ -258,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7F3961C29C34A7600D8B30D /* ContentView.swift in Sources */,
+				D74BEE5A29C3769800D96630 /* OnboardView.swift in Sources */,
+				D74BEE5C29C376CC00D96630 /* GameView.swift in Sources */,
 				D7F3961A29C34A7600D8B30D /* RPS_GameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
