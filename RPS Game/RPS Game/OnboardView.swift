@@ -89,7 +89,7 @@ struct OnboardView: View {
             }
             .navigationTitle("")
             .navigationDestination(isPresented: $isShowingGameView) {
-                GameView()
+                ContentView()
             }
         }
     }
