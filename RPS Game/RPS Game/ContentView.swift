@@ -25,18 +25,51 @@ struct ContentView: View {
     @ViewBuilder var gameScreen: some View{
         VStack{
             Section{
-                HStack(spacing: 20){
-                    Button("ROCK"){
+                HStack(spacing: 30) {
+                    Button{
                         buttonPressed(0)
+                    } label: {
+                        Text("✊")
+                            .font(.system(size: 50))
+                            .padding(10)
+                            .border(.indigo, width: 10)
+                            .cornerRadius(20)
                     }
-                    Button("PAPER"){
+                    
+                    Button{
                         buttonPressed(1)
+                    } label: {
+                        Text("✋")
+                            .font(.system(size: 50))
+                            .padding(10)
+                            .border(.indigo, width: 10)
+                            .cornerRadius(20)
                     }
-                    Button("SCISSOR"){
+                    
+                    
+                    
+                    Button{
                         buttonPressed(2)
+                    } label: {
+                        Text("✌️")
+                            .font(.system(size: 50))
+                            .padding(10)
+                            .border(.indigo, width: 10)
+                            .cornerRadius(20)
                     }
                 }
-                .font(.headline)
+//                HStack(spacing: 20){
+//                    Button("ROCK"){
+//                        buttonPressed(0)
+//                    }
+//                    Button("PAPER"){
+//                        buttonPressed(1)
+//                    }
+//                    Button("SCISSOR"){
+//                        buttonPressed(2)
+//                    }
+//                }
+//                .font(.headline)
             } header: { Text("Choose an Option")}
             Text("No of Turns: \(turns)")
         }
