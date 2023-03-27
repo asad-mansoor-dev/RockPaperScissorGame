@@ -11,7 +11,7 @@ import SwiftUI
 struct RPS_GameApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OnboardView()
         }
     }
 }
