@@ -11,12 +11,17 @@ import SwiftUI
 enum RPS: String {
     case rock, paper, scissor
 }
+enum GameStatus: String {
+    case WON, LOSE, DRAWN, NONE
+}
 struct GameView: View {
     @State var items = ["✋", "✊", "✌️"].shuffled()
     @State var shouldWin = true
     @State var points = 0
     @State var round = 0
-    @State var shouldShowScore = false
+    @State var shouldShowTotalScore = false
+    @State var shouldShowRoundScore = false
+    @State var gameStatus = GameStatus.NONE
     
     var body:  some View {
         ZStack {
@@ -32,13 +37,11 @@ struct GameView: View {
                 .padding()
                 Spacer()
                 VStack {
-                    Text(items[0])
+                    Text("😊")
                         .font(.system(size: 50))
-                    if let shapeName = getShapeTitle(string:items[0]) {
-                        
-                        Text(shapeName.rawValue.uppercased())
-                            .font(.headline.weight(.heavy))
-                    }
+                    
+                    Text("I'm done, now your turn!")
+                        .font(.headline.weight(.heavy))
                 }
                 
                 Spacer()
@@ -88,29 +91,43 @@ struct GameView: View {
                 Spacer()
             }
         }
-        .alert("Game Over", isPresented: $shouldShowScore) {
+        .alert("Game Over", isPresented: $shouldShowTotalScore) {
             Button("OK", role: .cancel) {
                 startNewGame()
             }
         } message: {
             Text("You scored \(points) points")
         }
+        .alert(gameStatus == .DRAWN ? "Game is DRAWN" : "You have \(gameStatus.rawValue) the Game", isPresented: $shouldShowRoundScore) {
+            Button("OK", role: .cancel) {
+                if round > 9 {
+                    shouldShowTotalScore = true
+                }
+                else {
+                    startNewRound()
+                }
+            }
+        } message: {
+            Text((gameStatus == .LOSE || gameStatus == .DRAWN) ? "I had chosen \(getShapeTitle(string:items[0])!.rawValue) 😊": "You scored 10 points, I had chosen \(getShapeTitle(string:items[0])!.rawValue)")
+        }
     }
     
     func executeRound(selectedOption: String) {
+        
         let result = didWon(selectedOption: selectedOption)
-        if result {
+        //check if game drawn
+        if selectedOption == items[0] {
+            gameStatus = .DRAWN
+        }
+        else if result {
             points += 10
+            gameStatus = .WON
         }
-        else {
+        else if !result {
             points -= 10
+            gameStatus = .LOSE
         }
-        if round > 9 {
-            shouldShowScore = true
-        }
-        else {
-            startNewRound()
-        }
+        shouldShowRoundScore = true
     }
     func getShapeTitle(string: String) -> RPS? {
         switch string {
